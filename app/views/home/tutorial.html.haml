@@ -10,21 +10,21 @@
 
         %p Your job will consist of two alternating phases: 
 
-        %p In the first phase, you will be shown the source code for a Java function, as well as a source code comment describing that function. You will carefully read the comment in the context of that function, and rate the quality of the comment in terms of three criteria: the comment's accuracy, adequacy, and conciseness. We will explain how to judge these criteria in the following section.
+        %p In the first phase, you will be shown the source code for a Java function, as well as a source code comment describing that function. You will carefully read the comment in the context of that function, and rate the quality of the comment in terms of three criteria. We will explain how to judge these criteria in the following section.
 
         %p In the second phase, you will be shown the same function and comment, as well as an additional comment. You will carefully read both comments, and then rate the similarity between the two comments. We will also explain how to make this determination in the following section.
 
         %br
 
         %h2 Guidelines
-        %p This section provides instructions for determining ratings for the source code comments. Your ratings will indicate your level of agreement with statements in the form of "This comment is..."; for example, "This comment is accurate." You will be able to select from the following options: "Strongly Disagree," "Disagree," "Agree," and "Strongly Agree." We provide examples of comments that might earn certain ratings, but do not provide specific instructions for differentiating between different tiers of agreement. It is ultimately up to you to determine your level of agreement with each statement. 
+        %p This section provides instructions for determining ratings for the source code comments. Your ratings will indicate your level of agreement with statements about the comment's quality. You will be able to select from the following options: "Strongly Disagree," "Disagree," "Agree," and "Strongly Agree." We provide examples of comments that might earn certain ratings, but do not provide specific instructions for differentiating between different tiers of agreement. It is ultimately up to you to determine your level of agreement with each statement. 
 
         %p The examples refer to the following function:
 
         %pre
             %code.language-java.function="public int compareTo(final FCAElementImplementation other){\n\treturn this.contextPosition - other.contextPosition;\n}" 
 
-        %h3 Accuracy
+        %h3 Statement 1: Independent of other factors, I feel that the summary is accurate.
         %p A comment is considered "accurate" if its description of the function is factually correct, and "inaccurate" if the description is false. Even if the comment fails to mention key information about the function (such as important functionality, usage scenarios, constraints, etc.), as long as the information that is stated is clearly correct, it is considered to be accurate. 
         %p{:style=>"text-decoration: underline"} Examples:
         %ul
@@ -85,8 +85,8 @@
         /             %li
         /                 "Unimplemented."
 
-        %h3 Adequacy
-        %p A comment is considered "adequate" if its description of the function is not missing any important information, and "inadequate" if it is missing important information that can hinder the understanding of the function. Even if some details are inaccurate, it can still be considered adequate so long as it helps a user to understand when, why, and how to implement the function.  
+        %h3 Statement 2: The summary is missing important information, and that can hinder the understanding of the method.
+        %p Important information explains helps a user to understand when, why, and how to implement the function. If you can comprehend the function by simply reading the signature and skimming over the source code without even reading the comment, then the comment may not need to elaborate much; however, if the purpose, functionality, or intended usage of a function are unclear from the code itself, then that would be considered "important" information for the comment to contain. A comment can contain all important information about a function, even if it contains some incorrect or unnecessary information.
 
         %p{:style=>"text-decoration: underline"} Examples:
         %ul
@@ -94,7 +94,7 @@
                 %strong{:style=>"color:#000890"} Strongly Agree
                 %ul
                     %li
-                        "returns the distance to the currentposition property of element other"
+                        "returns the distance to another element's position in the queue"
             %li
                 %strong{:style=>"color:#486078"} Agree
                 %ul
@@ -103,7 +103,7 @@
                 %strong{:style=>"color:#786040;"} Disagree
                 %ul
                     %li
-                        "returns an int"
+                        "returns an int comparing the two objects"
             %li
                 %strong{:style=>"color:#800000"} Strongly Disagree
                 %ul
@@ -155,8 +155,8 @@
         /             %li
         /                 "We really need to implement a more appropriate metric."
 
-        %h3 Conciseness
-        %p A comment is considered "concise" if its description of the function does not contain unnecessary words or information, and not concise if it contains a lot of unnecessary words or information. "Unnecessary" words and pieces of information are ones that do not help the reader comprehend the source code (regardless of the accuracy); for instance, information that is totally unrelated, redundant, tangential, or overly-specific.
+        %h3 Statement: The summary contains a lot of unnecessary information.
+        %p "Unnecessary" pieces of information are ones that do not help the reader comprehend the source code; for instance, information that is totally unrelated, redundant, tangential, or overly-specific.
         %p{:style=>"text-decoration: underline"} Examples:
         %ul
             %li
@@ -179,9 +179,9 @@
                 %strong{:style=>"color:#800000"} Strongly Disagree
                 %ul
                     %li
-                        "compares two elements created by a generator to help determine which one should be discarded in a later phase based on position" 
+                        "compares two elements created by a generator to help determine which one should be discarded in a later phase" 
 
-        %h3 Similarity
+        %h3 Statement: These two comments are similar. 
         %p Two comments are "similar" if they convey the same information with the same general structure, and "dissimilar" if the convey different information with different structures.
         %p{:style=>"text-decoration: underline"} Examples:
         %ul
