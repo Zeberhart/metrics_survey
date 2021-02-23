@@ -28,6 +28,10 @@ class HomeController < ApplicationController
     end
   end
 
+  def demo
+    
+  end
+
   def compare
     if @user.current_phase != "compare"
       redirect_to :rate

@@ -3,7 +3,8 @@
         #main_content
             #instructions
                 #div{:style=>"display: flex; flex-direction:row; "}
-                    #div{:style=>"flex:1"}
+                    #div{:style=>"flex:1; text-align:left"}
+                        = link_to "Logout", :logout, :method => :delete
                     #div{:style=>"flex:1"}
                         Function #{@user.current_function}/#{Function.all.count}
                     #div{:style=>"flex:1; text-align:right"}
