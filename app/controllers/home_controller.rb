@@ -111,7 +111,7 @@ class HomeController < ApplicationController
     end
 
     def set_comment
-      case @user.id%4
+      case @user.group
       when 0
         if @function.id <= Function.count/2
           @comment=Comment.find_by(function:@function, source:"reference")
@@ -140,7 +140,7 @@ class HomeController < ApplicationController
     end
 
     def set_comments
-      case @user.id%4
+      case @user.group
       when 0
         if @function.id <= Function.count/2
           @comment1=Comment.find_by(function:@function, source:"reference")
