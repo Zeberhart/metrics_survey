@@ -94,21 +94,22 @@
                 %strong{:style=>"color:#000890"} Strongly Agree
                 %ul
                     %li
-                        "returns the distance to another element position in the queue"
+                        "we should really use a better metric"
+                       
             %li
                 %strong{:style=>"color:#486078"} Agree
                 %ul
                     %li
-                        "compares s object contextpositions"
+                        "returns an int comparing the two objects"
                 %strong{:style=>"color:#786040;"} Disagree
                 %ul
                     %li
-                        "returns an int comparing the two objects"
+                        "compares s object contextpositions"
             %li
                 %strong{:style=>"color:#800000"} Strongly Disagree
                 %ul
                     %li
-                        "we should really use a better metric"
+                        "returns the distance to another element position in the queue"
         / %ul
         /     %li
         /         %strong{:style=>"color:#000890"} Strongly Agree
@@ -163,23 +164,24 @@
                 %strong{:style=>"color:#000890"} Strongly Agree
                 %ul
                     %li
-                        "returns the distance between elements"
+                        "compares elements created by a generator to help determine which one should be discarded in a later phase" 
+                    
             %li
                 %strong{:style=>"color:#486078"} Agree
                 %ul
                     %li
-                        "this function compares elements by calculating the distance between their positions" 
+                        "the purpose of this function is to calculate element distance and then return that distance as an int" 
 
             %li
                 %strong{:style=>"color:#786040;"} Disagree
                 %ul
                     %li
-                        "the purpose of this function is to calculate element distance and then return that distance as an int" 
+                        "this function compares elements by calculating the distance between their positions" 
             %li
                 %strong{:style=>"color:#800000"} Strongly Disagree
                 %ul
                     %li
-                        "compares elements created by a generator to help determine which one should be discarded in a later phase" 
+                        "returns the distance between elements"
 
         %h3 Statement: These two comments are similar. 
         %p Two comments are "similar" if they convey the same information with the same general structure, and "dissimilar" if the convey different information with different structures.
