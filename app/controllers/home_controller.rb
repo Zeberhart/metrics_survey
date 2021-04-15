@@ -136,6 +136,18 @@ class HomeController < ApplicationController
         else
           @comment=Comment.find_by(function:@function, source:"reference")
         end
+      when 4
+        if (@function.id <= Function.count/2 and @function.id%2==0) or (@function.id > Function.count/2 and @function.id%2==1) 
+          @comment=Comment.find_by(function:@function, source:"reference")
+        else
+          @comment=Comment.find_by(function:@function, source:"alex1")
+        end
+      when 5
+        if (@function.id <= Function.count/2 and @function.id%2==0) or (@function.id > Function.count/2 and @function.id%2==1) 
+          @comment=Comment.find_by(function:@function, source:"alex1")
+        else
+          @comment=Comment.find_by(function:@function, source:"reference")
+        end
       end
     end
 
@@ -167,6 +179,22 @@ class HomeController < ApplicationController
         end
       when 3
         if @function.id%2==0
+          @comment1=Comment.find_by(function:@function, source:"alex1")
+          @comment2=Comment.find_by(function:@function, source:"reference")
+        else
+          @comment1=Comment.find_by(function:@function, source:"reference")
+          @comment2=Comment.find_by(function:@function, source:"alex1")
+        end
+      when 4
+        if (@function.id <= Function.count/2 and @function.id%2==0) or (@function.id > Function.count/2 and @function.id%2==1) 
+          @comment1=Comment.find_by(function:@function, source:"reference")
+          @comment2=Comment.find_by(function:@function, source:"alex1")
+        else
+          @comment1=Comment.find_by(function:@function, source:"alex1")
+          @comment2=Comment.find_by(function:@function, source:"reference")
+        end
+      when 5
+        if (@function.id <= Function.count/2 and @function.id%2==0) or (@function.id > Function.count/2 and @function.id%2==1) 
           @comment1=Comment.find_by(function:@function, source:"alex1")
           @comment2=Comment.find_by(function:@function, source:"reference")
         else
