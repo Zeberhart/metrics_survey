@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # POST /signup
   def create
     @user = User.new(user_params)
+    @user.email = @user.email.downcase
     respond_to do |format|
       if @user.save
         @user.update(current_function: 1)
