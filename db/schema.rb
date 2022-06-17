@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_02_15_200727) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.string "text"
     t.string "source"
@@ -67,4 +64,6 @@ ActiveRecord::Schema.define(version: 2021_02_15_200727) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "comparisons", "comments", column: "comment1_id"
+  add_foreign_key "comparisons", "comments", column: "comment2_id"
 end
